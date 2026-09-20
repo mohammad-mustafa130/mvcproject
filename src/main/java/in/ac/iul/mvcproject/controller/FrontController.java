@@ -34,9 +34,6 @@ public class FrontController extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             
             String[] path = request.getPathInfo().trim().toLowerCase().split("/");
-            for(String i: path) {
-                System.out.println(i);
-            }
             
             if(path[1].equals("view")) {
                 request.getRequestDispatcher("/WEB-INF/pages/" + path[2] + ".jsp").forward(request, response);
@@ -44,8 +41,8 @@ public class FrontController extends HttpServlet {
                 try {
                     String str = path[2].trim().substring(0,1).toUpperCase() + path[2].trim().substring(1);
                     Model model = (Model)Class.forName("in.ac.iul.mvcproject.models." + str).newInstance();
-                    String jsp_file = model.businessLogic(request, response);
-                    request.getRequestDispatcher("/WEB-INF/pages/" + jsp_file + ".jsp").forward(request, response);   
+                    String viewPath = model.businessLogic(request, response);
+                    request.getRequestDispatcher("/WEB-INF/pages/" + viewPath + ".jsp").forward(request, response);   
                 } catch(Exception e) {
                     e.printStackTrace();
                 }

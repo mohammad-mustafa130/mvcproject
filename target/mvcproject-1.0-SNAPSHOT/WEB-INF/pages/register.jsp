@@ -9,11 +9,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Registration Page</title>
     </head>
     <body>
         <h1>Registration Form </h1>
-        <form action="register" method="POST">
+        <form action="/mvcproject/fc/models/register" method="POST">
             <input type="email" name="email" placeholder="Email"/>
             <br/>
             <br/>
@@ -26,7 +26,7 @@
             <input type="text" name="lname" placeholder="LastName"/>
             <br/>
             <br/>
-            <input type="DATE" name="date" placeholder="DOB"/>
+            <input type="DATE" name="dob" placeholder="DOB"/>
             <br/>
             <br/>
             <div>
@@ -35,7 +35,7 @@
                 <label for="maleGender">Male</label>
                 
                 <input id="femaleGender" type="radio" name="gender" value="1"/>
-                <label for="femaleGender">Female</lable>
+                <label for="femaleGender">Female</label>
             </div>
             <br/>
             <input type="submit" value="Register">
