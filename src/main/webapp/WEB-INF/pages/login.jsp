@@ -13,10 +13,10 @@
     </head>
     <body>
         <h1>Login Form</h1>
-        <form action="login" method="POST">
-            <input type="email" placeholder="Email"/>
+        <form action="/mvcproject/fc/models/login" method="POST">
+            <input type="email" name="email" placeholder="Email"/>
             <br><br>
-            <input type="password" placeholder="Password"/>
+            <input type="password" name="password" placeholder="Password"/>
             <br><br>
             <input type="submit" value="Login"/>
         </form>

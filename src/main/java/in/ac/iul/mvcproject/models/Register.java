@@ -13,7 +13,7 @@ import java.sql.*;
  *
  * @author mohammad-mustafa
  */
-public class Register implements Model{
+public class Register implements Model {
     @Override
     public String businessLogic(HttpServletRequest request, HttpServletResponse response) {
         String email = request.getParameter("email");
@@ -37,8 +37,8 @@ public class Register implements Model{
             Connection con = md.doConnect();
             
             String query = "SELECT uid FROM user_table2 ORDER BY uid DESC LIMIT 1";
-            PreparedStatement ps = con.prepareStatement(query);
-            ResultSet rs = ps.executeQuery();
+            PreparedStatement ps = md.getStatement(con, query);
+            ResultSet rs = md.getData(ps);
             if(rs.next()) uid = rs.getInt("uid")+1;
             else uid = 1;
             
