@@ -26,7 +26,7 @@ public class Login implements Model {
             MyDao md = new MyDao();
             Connection con = md.doConnect();
             
-            String query = "SELECT password, status, uid FROM login_table2 WHERE (email='"+email+"')";
+            String query = "CALL emailInfo('"+email+"')";
             PreparedStatement ps = md.getStatement(con, query);
             
             ResultSet rs = md.getData(ps);

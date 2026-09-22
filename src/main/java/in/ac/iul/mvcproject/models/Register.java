@@ -36,31 +36,18 @@ public class Register implements Model {
             MyDao md = new MyDao();
             Connection con = md.doConnect();
             
-            String query = "SELECT uid FROM user_table2 ORDER BY uid DESC LIMIT 1";
-            PreparedStatement ps = md.getStatement(con, query);
+            String uidQuery = "CALL uidInfo()";
+            PreparedStatement ps = md.getStatement(con, uidQuery);
             ResultSet rs = md.getData(ps);
             if(rs.next()) uid = rs.getInt("uid")+1;
             else uid = 1;
             
-            String query1 = "INSERT INTO user_table2(uid, first_name, last_name, dob, gender) VALUES(?,?,?,?,?)";
-            
-            PreparedStatement ps1 = md.getStatement(con, query1);
-            ps1.setInt(1, uid);
-            ps1.setString(2, fname);
-            ps1.setString(3, lname);
-            ps1.setString(4, dob);
-            ps1.setString(5, gender);
-            
+            String userQuery = "CALL userInfo('"+uid+"', '"+fname+"', '"+lname+"', '"+dob+"', '"+gender+"')";
+            PreparedStatement ps1 = md.getStatement(con, userQuery);
             md.storeData(ps1);
             
-            String query2 = "INSERT INTO login_table2(email, password, status, uid) VALUES(?,?,?,?)";
-            
-            PreparedStatement ps2 = md.getStatement(con, query2);
-            ps2.setString(1, email);
-            ps2.setString(2, password);
-            ps2.setInt(3, status);
-            ps2.setInt(4, uid);
-            
+            String loginQuery = "CALL loginInfo('"+email+"', '"+password+"', '"+status+"', '"+uid+"')";
+            PreparedStatement ps2 = md.getStatement(con, loginQuery);
             md.storeData(ps2);
             
         } catch(Exception e) {
