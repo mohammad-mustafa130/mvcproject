@@ -6,19 +6,39 @@
         <link rel="stylesheet" href="style.css" type="text/css">
     </head>
     <body>
-        <div id="page" class="division">
+        <div id="page">
             <div id="header">
-                
+                <form action="#" method="POST">
+                    <ul id="loginul">
+                        <li><input type="email" name="email" placeholder="Email"/></li>
+                        <li><input type="password" name="password" placeholder="Password"/></li>
+                        <li><input type="submit" value="Login">
+                    </ul>
+                </form>
             </div><!--header-->
             <div id="main_body">
                 <div id="left_pane">
-                    
+                    <form action="#" method="GET">
+                        <ul id="formul">
+                            <li class="formli"><input type="email" class="ff" name="email" placeholder="Email"/></li>
+                            <li class="formli"><input type="password" class="ff" name="password" placeholder="Password"/></li>
+                            <li class="formli"><input type="text" class="ff" name="fname" placeholder="FirstName"/></li>
+                            <li class="formli"><input type="text" class="ff" name="lname" placeholder="LastName"/></li>
+                            <li class="formli"><input type="date" class="ff" name="dob"/></li>
+                            <li class="formli">
+                                Gender:
+                                <input type="radio" name="gender" value="male"/> Male
+                                <input type="radio" name="gender" value="female"/>Female
+                            </li>
+                            <li class="formli"><input type="submit" value="SignUp"/></li>
+                        </ul>
+                    </form>
                 </div><!--left_pane-->
                 <div id="right_pane">
-                    
+                    <img src="mypic.jpeg" alt="MyPic" height="300" width="280"/>
                 </div><!--right_pane-->
             </div><!--main_body-->
-            <div id="footer" class="division">
+            <div id="footer">
                 
             </div><!--footer-->
         </div><!--page-->

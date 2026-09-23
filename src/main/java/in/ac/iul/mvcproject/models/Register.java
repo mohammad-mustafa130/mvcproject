@@ -40,15 +40,7 @@ public class Register implements Model {
             PreparedStatement ps = md.getStatement(con, uidQuery);
             ResultSet rs = md.getData(ps);
             if(rs.next()) uid = rs.getInt("uid")+1;
-            else uid = 1;
-            
-            /*String userQuery = "CALL userInfo('"+uid+"', '"+fname+"', '"+lname+"', '"+dob+"', '"+gender+"')";
-            PreparedStatement ps1 = md.getStatement(con, userQuery);
-            md.storeData(ps1);
-            
-            String loginQuery = "CALL loginInfo('"+email+"', '"+password+"', '"+status+"', '"+uid+"')";
-            PreparedStatement ps2 = md.getStatement(con, loginQuery);
-            md.storeData(ps2);*/
+            else uid = 1;            
             
             String registerQuery = "CALL registerInfo('"+uid+"', '"+fname+"', '"+lname+"', '"+dob+"', '"+gender+"', '"+email+"', '"+password+"', '"+status+"')";
             PreparedStatement ps1 = md.getStatement(con, registerQuery);

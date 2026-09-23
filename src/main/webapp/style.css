@@ -21,6 +21,8 @@ div {
 #header {
     height: 100px;
     width: 1020px;
+    display: flex;
+    justify-content: right;
 }
 
 #footer {
@@ -43,4 +45,31 @@ div {
     height: 385px;
     width: 505px;
     float: right;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.formli {
+    margin: 2px 5px;
+    list-style: none;
+}
+
+.ff {
+    height: 30px;
+    width: 250px;
+    border: 1px solid #ececec;
+}
+
+#loginul {
+    margin: 0;
+    padding: 0;
+    margin-top: 75px;
+}
+
+#loginul > li {
+    list-style: none;
+    display: inline;
 }
