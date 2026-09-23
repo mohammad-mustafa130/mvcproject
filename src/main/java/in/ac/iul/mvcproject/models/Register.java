@@ -1,4 +1,4 @@
-/*
+    /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -42,13 +42,17 @@ public class Register implements Model {
             if(rs.next()) uid = rs.getInt("uid")+1;
             else uid = 1;
             
-            String userQuery = "CALL userInfo('"+uid+"', '"+fname+"', '"+lname+"', '"+dob+"', '"+gender+"')";
+            /*String userQuery = "CALL userInfo('"+uid+"', '"+fname+"', '"+lname+"', '"+dob+"', '"+gender+"')";
             PreparedStatement ps1 = md.getStatement(con, userQuery);
             md.storeData(ps1);
             
             String loginQuery = "CALL loginInfo('"+email+"', '"+password+"', '"+status+"', '"+uid+"')";
             PreparedStatement ps2 = md.getStatement(con, loginQuery);
-            md.storeData(ps2);
+            md.storeData(ps2);*/
+            
+            String registerQuery = "CALL registerInfo('"+uid+"', '"+fname+"', '"+lname+"', '"+dob+"', '"+gender+"', '"+email+"', '"+password+"', '"+status+"')";
+            PreparedStatement ps1 = md.getStatement(con, registerQuery);
+            md.storeData(ps1);
             
         } catch(Exception e) {
             e.printStackTrace();
