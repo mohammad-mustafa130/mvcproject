@@ -49,7 +49,7 @@ public class Register implements Model {
         } catch(Exception e) {
             e.printStackTrace();
         }
-        return "register";
+        return "afterRegister";
     }
     
 }

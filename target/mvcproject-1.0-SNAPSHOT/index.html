@@ -3,11 +3,156 @@
     <head>
         <title>MVC Project</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="bootstrap.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body>
-        <h1>Welcome!</h1>
-        <a href="/mvcproject/fc/view/login">SignIn</a>
-        <br><br>
-        <a href="/mvcproject/fc/view/register">SignUp</a>
+    <body>        
+        
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="javascript:void(0)">
+                    <img src="logo.png" alt="Logo" width="30" height="30">TutorConnect
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                
+                
+                <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="navbar-nav ms-auto gap-4">
+                        <li class="nav-item">
+                            <form class="d-flex">
+                                <input class="form-control me-2" type="text" placeholder="Search">
+                                <button class="btn btn-success" type="button">Search</button>
+                            </form>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Find Tutors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">How It Works</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Become a Tutor</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Carousel -->
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="pic1.jpg" alt="Los Angeles" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="pic2.jpg" alt="Chicago" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="pic3.jpg" alt="New York" class="d-block w-100">
+                </div>
+            </div>
+
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+        <!-- The Modal -->
+        <div class="modal" id="loginModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Login Form</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form action="/mvcproject/fc/models/login" method="POST">
+                            <input type="email" name="email" placeholder="Email"/>
+                            <br><br>
+                            <input type="password" name="password" placeholder="Password"/>
+                            <br><br>
+                            <input type="submit" value="Login"/>
+                        </form>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- The Modal -->
+        <div class="modal" id="registerModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Registration Form</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form action="/mvcproject/fc/models/register" method="POST">
+                            <input type="email" name="email" placeholder="Email"/>
+                            <br/><br/>
+                            <input type="password" name="password" placeholder="Password"/>
+                            <br/><br/>
+                            <input type="text" name="fname" placeholder="FirstName"/>
+                            <br/><br/>
+                            <input type="text" name="lname" placeholder="LastName"/>
+                            <br/><br/>
+                            <input type="date" name="dob"/>
+                            <br/><br/>
+                            <div>
+                                Gender:
+                                <input id="maleGender" type="radio" name="gender" value="0"/>
+                                <label for="maleGender">Male</label>
+                
+                                <input id="femaleGender" type="radio" name="gender" value="1"/>
+                                <label for="femaleGender">Female</label>
+                            </div>
+                            <br/>
+                            <input type="submit" value="Register">
+                        </form>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="bootstrap.js"></script>
     </body>
 </html>
