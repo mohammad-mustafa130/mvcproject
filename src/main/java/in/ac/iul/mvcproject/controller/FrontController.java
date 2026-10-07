@@ -33,16 +33,22 @@ public class FrontController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             
-            String[] path = request.getPathInfo().trim().toLowerCase().split("/");
+            String[] path = request.getPathInfo().trim().split("/");
             
             if(path[1].equals("view")) {
+                
                 request.getRequestDispatcher("/WEB-INF/pages/" + path[2] + ".jsp").forward(request, response);
+                
             } else if(path[1].equals("models")) {
+                
                 try {
                     String str = path[2].trim().substring(0,1).toUpperCase() + path[2].trim().substring(1);
                     Model model = (Model)Class.forName("in.ac.iul.mvcproject.models." + str).newInstance();
                     String viewPath = model.businessLogic(request, response);
-                    request.getRequestDispatcher("/WEB-INF/pages/" + viewPath + ".jsp").forward(request, response);   
+                    if(viewPath != null) {
+                        request.getRequestDispatcher("/WEB-INF/pages/" + viewPath + ".jsp").forward(request, response);
+                    }
+                    
                 } catch(Exception e) {
                     e.printStackTrace();
                 }

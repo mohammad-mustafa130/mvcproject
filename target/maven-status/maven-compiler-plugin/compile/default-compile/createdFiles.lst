@@ -4,4 +4,7 @@ in/ac/iul/mvcproject/JakartaRestConfiguration.class
 in/ac/iul/mvcproject/controller/FrontController.class
 in/ac/iul/mvcproject/resources/JakartaEE11Resource.class
 in/ac/iul/mvcproject/models/Login.class
+in/ac/iul/mvcproject/models/SendMail.class
+in/ac/iul/mvcproject/models/SendMail$1.class
 in/ac/iul/mvcproject/models/Model.class
+in/ac/iul/mvcproject/models/Emailchecker.class

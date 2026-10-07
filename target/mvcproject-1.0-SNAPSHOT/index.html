@@ -4,6 +4,7 @@
         <title>MVC Project</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="bootstrap.css" rel="stylesheet" type="text/css"/>
+        <script src="bootstrap.js"></script>
     </head>
     <body>        
         
@@ -122,7 +123,7 @@
                     <!-- Modal body -->
                     <div class="modal-body">
                         <form action="/mvcproject/fc/models/register" method="POST">
-                            <input type="email" name="email" placeholder="Email"/>
+                            <input id="eml" type="email" name="email" placeholder="Email"/><span id="espan"></span>
                             <br/><br/>
                             <input type="password" name="password" placeholder="Password"/>
                             <br/><br/>
@@ -153,6 +154,6 @@
             </div>
         </div>
         
-        <script src="bootstrap.js"></script>
+        <script src="emailverifier.js"></script>
     </body>
 </html>

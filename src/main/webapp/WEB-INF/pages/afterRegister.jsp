@@ -12,6 +12,6 @@
         <title>Registered</title>
     </head>
     <body>
-        <h1>You have successfully registered!</h1>
+        <p>Please check your registered email address and click the verification link to verify your email.</p>
     </body>
 </html>

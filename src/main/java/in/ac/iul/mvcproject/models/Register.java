@@ -16,6 +16,7 @@ import java.sql.*;
 public class Register implements Model {
     @Override
     public String businessLogic(HttpServletRequest request, HttpServletResponse response) {
+        
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String fname = request.getParameter("fname");
@@ -45,6 +46,9 @@ public class Register implements Model {
             String registerQuery = "CALL registerInfo('"+uid+"', '"+fname+"', '"+lname+"', '"+dob+"', '"+gender+"', '"+email+"', '"+password+"', '"+status+"')";
             PreparedStatement ps1 = md.getStatement(con, registerQuery);
             md.storeData(ps1);
+            
+            SendMail mail = new SendMail();
+            mail.mailSender(email, uid);
             
         } catch(Exception e) {
             e.printStackTrace();
