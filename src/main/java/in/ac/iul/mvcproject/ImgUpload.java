@@ -44,7 +44,7 @@ public class ImgUpload extends HttpServlet {
             
             String path = System.getProperty("user.home");
             
-            OutputStream ost = new FileOutputStream(new File(path + File.separator+fileName));
+            OutputStream ost = new FileOutputStream(new File(path + File.separator + fileName));
             filecontent = filePart.getInputStream();
             int read = 0;
             final byte[] bytes = new byte[1024];

@@ -8,6 +8,10 @@
         <servlet-name>ImgUpload</servlet-name>
         <servlet-class>in.ac.iul.mvcproject.ImgUpload</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PdfGenerator</servlet-name>
+        <servlet-class>in.ac.iul.mvcproject.PdfGenerator</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
         <url-pattern>/fc/*</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>ImgUpload</servlet-name>
         <url-pattern>/imgupload</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PdfGenerator</servlet-name>
+        <url-pattern>/pdfgenerator</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
